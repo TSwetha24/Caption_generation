@@ -9,10 +9,15 @@ const updateCaptionRoute = require("./routes/updateCaption");
 const aiFeaturesRoute = require("./routes/aiFeatures"); // 👈 NEW: Imported the AI route
 
 const app = express();
-const PORT = 5000;
-
-app.use(cors({ origin: "http://localhost:3000" }));
-app.use(express.json());
+const PORT = process.env.PORT || 5000;
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://caption-generation-two.vercel.app"
+    ]
+  })
+);app.use(express.json());
 
 app.use("/api/upload", uploadRoute);
 app.use("/api", listFilesRoute);
