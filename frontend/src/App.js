@@ -2,8 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
 
 
-const API = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000/api";
-
+const API = "https://caption-generation-backend.onrender.com/api";
 // 🌍 Comprehensive Language List
 const LANGUAGES = [
   { code: "en", label: "🇺🇸 English" },
