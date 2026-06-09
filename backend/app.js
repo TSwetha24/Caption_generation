@@ -28,6 +28,9 @@ app.use("/api/ai", aiFeaturesRoute); // 👈 NEW: Added it to your API endpoints
 // serve videos
 app.use("/api/video", express.static("final"));
 
+app.get("/", (req, res) => {
+  res.send("Caption Generation Backend is running");
+});
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)
 );
