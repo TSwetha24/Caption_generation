@@ -3,7 +3,9 @@ const router = express.Router();
 const { GoogleGenAI } = require("@google/genai");
 
 // Initialize Gemini
-const ai = new GoogleGenAI({});
+const ai = new GoogleGenAI({
+  apiKey: process.env.GOOGLE_API_KEY
+});
 const DEFAULT_AI_MODEL = "gemini-2.5-flash";
 const AI_MODEL = process.env.GOOGLE_GENAI_MODEL || DEFAULT_AI_MODEL;
 
